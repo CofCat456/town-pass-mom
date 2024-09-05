@@ -1,4 +1,5 @@
 {
+  "name": "town-pass-mom-web",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@9.9.0",

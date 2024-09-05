@@ -1,16 +1,18 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import ky from '~/lib/ky'
 
+import type { User } from '~/type'
+
 export const useDataStore = defineStore('data', () => {
-  const data = ref([])
+  const users = ref<(User[])>([])
 
   async function fetchData() {
-    const user = await ky.get('users')
-    console.log(user)
+    const { responseObject } = await ky.get<User[]>('users')
+    users.value = responseObject
   }
 
   return {
-    data,
+    users,
     fetchData,
   }
 })

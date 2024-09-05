@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+
 defineOptions({
   name: 'IndexPage',
 })
 
 const dataStore = useDataStore()
 const { fetchData } = dataStore
+const { users } = storeToRefs(dataStore)
 
 const name = ref('')
 
@@ -43,5 +46,9 @@ onBeforeMount(async () => {
         Go
       </button>
     </div>
+
+    <pre mxa w-fit text-left>
+      {{ JSON.stringify(users, null, 2) }}
+    </pre>
   </div>
 </template>
