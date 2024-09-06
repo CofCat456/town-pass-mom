@@ -31,7 +31,7 @@ function handleSearch() {
 
     <div>
       <button
-        class="text-sm btn"
+        class="btn text-sm"
         :disabled="!name"
         @click="handleSearch"
       >
