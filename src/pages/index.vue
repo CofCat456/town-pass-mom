@@ -1,25 +1,17 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
+import ky from '~/lib/ky'
 
 defineOptions({
   name: 'IndexPage',
 })
 
-const dataStore = useDataStore()
-const { fetchData } = dataStore
-const { users } = storeToRefs(dataStore)
-
 const name = ref('')
 
-const router = useRouter()
-function go() {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
+function handleSearch() {
+  ky.post(`check_name`, {
+    json: { name: name.value },
+  })
 }
-
-onBeforeMount(async () => {
-  await fetchData()
-})
 </script>
 
 <template>
@@ -34,21 +26,17 @@ onBeforeMount(async () => {
       my-3
       w-auto
       placeholder="What's your name?"
-      @keydown.enter="go"
+      @keydown.enter="handleSearch"
     />
 
     <div>
       <button
         class="text-sm btn"
         :disabled="!name"
-        @click="go"
+        @click="handleSearch"
       >
-        Go
+        Search
       </button>
     </div>
-
-    <pre mxa w-fit text-left>
-      {{ JSON.stringify(users, null, 2) }}
-    </pre>
   </div>
 </template>
