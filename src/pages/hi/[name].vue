@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const params = useRoute('/hi/[name]').params
 const router = useRouter()
+
+const initial = ref(10)
+
+useIntervalFn(() => {
+  initial.value += 1
+}, 5000)
 </script>
 
 <template>
@@ -18,5 +24,6 @@ const router = useRouter()
         Back
       </button>
     </div>
+    <TheComponent :initial />
   </div>
 </template>

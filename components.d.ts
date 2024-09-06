@@ -10,6 +10,6 @@ declare module 'vue' {
     AInput: typeof import('ant-design-vue/es')['Input']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheCounter: typeof import('./src/components/TheCounter.vue')['default']
+    TheComponent: typeof import('./src/components/TheComponent.vue')['default']
   }
 }
