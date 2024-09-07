@@ -8,15 +8,18 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AInput: typeof import('ant-design-vue/es')['Input']
+    IconCalendar: typeof import('./src/components/icons/IconCalendar.vue')['default']
     IconChevronRight: typeof import('./src/components/icons/IconChevronRight.vue')['default']
     IconData: typeof import('./src/components/icons/IconData.vue')['default']
     IconDiary: typeof import('./src/components/icons/IconDiary.vue')['default']
     IconHome: typeof import('./src/components/icons/IconHome.vue')['default']
+    IconMenu: typeof import('./src/components/icons/IconMenu.vue')['default']
     IconQuote: typeof import('./src/components/icons/IconQuote.vue')['default']
     IconRight: typeof import('./src/components/icons/IconChevronRight.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheComponent: typeof import('./src/components/TheComponent.vue')['default']
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
+    TheHeader: typeof import('./src/components/TheHeader.vue')['default']
   }
 }

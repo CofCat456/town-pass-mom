@@ -5,7 +5,5 @@ defineOptions({
 </script>
 
 <template>
-  <div>
-    123
-  </div>
+  <TheHeader />
 </template>
