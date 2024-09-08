@@ -232,3 +232,47 @@ export interface Ultrasound {
    */
   user_id: string
 }
+
+export interface Meal {
+  /**
+   * 鈣
+   */
+  calcium: number
+  /**
+   * 碳水化合物
+   */
+  carbohydrates: number
+  /**
+   * 脂肪
+   */
+  fat: number
+  /**
+   * 葉酸
+   */
+  folic_acid: number
+  /**
+   * 鐵
+   */
+  iron: number
+  /**
+   * 餐點日期
+   */
+  meal_date: string
+  /**
+   * 餐點名稱
+   */
+  meal_name: string
+  /**
+   * 蛋白質
+   */
+  protein: number
+  /**
+   * 維生素 B
+   */
+  vitamin_b: number
+  /**
+   * 鋅
+   */
+  zinc: number
+  text: string
+}

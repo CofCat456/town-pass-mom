@@ -25,6 +25,7 @@ declare module 'vue-router/auto-routes' {
     '/diary/all': RouteRecordInfo<'/diary/all', '/diary/all', Record<never, never>, Record<never, never>>,
     '/diary/prenatal/[id]': RouteRecordInfo<'/diary/prenatal/[id]', '/diary/prenatal/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/diary/ultrasound/[id]': RouteRecordInfo<'/diary/ultrasound/[id]', '/diary/ultrasound/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/metal': RouteRecordInfo<'/metal', '/metal', Record<never, never>, Record<never, never>>,
     '/setting': RouteRecordInfo<'/setting', '/setting', Record<never, never>, Record<never, never>>,
     '/sub/': RouteRecordInfo<'/sub/', '/sub', Record<never, never>, Record<never, never>>,
   }

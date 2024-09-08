@@ -116,7 +116,7 @@ onMounted(() => {
           <p w-24 text-right text-sm font-roboto>
             妊娠週數 :
           </p>
-          <a-input v-model:value="editData.estimated_fetal_weeks" placeholder="範例：第16週" />
+          <a-input v-model:value="editData.estimated_fetal_weeks!" placeholder="範例：第16週" />
         </a-space>
 
         <!-- 預產期  -->

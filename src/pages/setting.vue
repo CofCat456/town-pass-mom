@@ -15,6 +15,7 @@ const menus = [
   {
     icon: IconMedal,
     text: '好孕徽章',
+    path: '/metal',
   },
   {
     icon: IconNotification,
@@ -25,6 +26,13 @@ const menus = [
     text: '服務介紹',
   },
 ]
+
+const router = useRouter()
+function navigateTo(path: string | undefined) {
+  if (path != null && path.length > 0) {
+    router.push(path)
+  }
+}
 </script>
 
 <template>
@@ -49,8 +57,8 @@ const menus = [
 
   <!-- Menu -->
   <section p="x-5 t-1" flex="~ col items-center justify-center">
-    <template v-for="{ text, icon } in menus" :key="text">
-      <div class="group w-80%" p="y-4.5" flex="~ items-center justify-between" border="b [#E9E9E9]">
+    <template v-for="{ text, icon, path } in menus" :key="text">
+      <div class="group w-80%" p="y-4.5" flex="~ items-center justify-between" border="b [#E9E9E9]" @click="navigateTo(path)">
         <div flex="~ items-center" cursor-pointer gap-x-6>
           <component :is="icon" />
           <p text="xs op-80" class="group-hover:text-[#F3B671]" color-base transition-colors duration-150>

@@ -17,7 +17,7 @@ function go() {
 </script>
 
 <template>
-  <li w-full p="x-4.75 y-4.125" border="1 [#DEDEDE]" rounded-6.25 class="shadow-[2px_2px_5px_0px_rgb(217, 217, 217,.25)]" @click="go">
+  <li w-full p="x-4.75 y-4.125" border="1 [#DEDEDE]" rounded-6.25 class="217, 217,.25)] shadow-[2px_2px_5px_0px_rgb(217," @click="go">
     <div mb-5 flex="~ justify-between items-center">
       <div flex="~ items-center" gap-x-1.25>
         <p text-xs color-primary font-bold>

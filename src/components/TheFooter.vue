@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import IconHome from './icons/IconHome.vue'
 import IconDiary from './icons/IconDiary.vue'
-import IconData from './icons/IconData.vue'
 import IconSetting from './icons/IconSetting.vue'
 
 const route = useRoute()
@@ -20,12 +19,6 @@ const navs = [
     activeList: ['/diary/', '/diary/all', '/diary/prenatal/[id]', '/diary/ultrasound/[id]', '/sub/'],
   },
   {
-    name: '育兒萬事通',
-    path: '/data',
-    icon: IconData,
-    activeList: ['/data'],
-  },
-  {
     name: '設定',
     path: '/setting',
     icon: IconSetting,
@@ -36,6 +29,7 @@ const navs = [
 
 <template>
   <footer
+    v-if="route.path as string !== '/metal'"
     position="fixed bottom-0 left-0 right-0"
     flex="~ justify-center items-start"
     h-26.25

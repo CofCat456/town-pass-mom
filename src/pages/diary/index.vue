@@ -72,10 +72,10 @@ defineOptions({
       </RouterLink>
 
       <div p="y-4 x-10" w-full class="bg" position="absolute left-0 right-0 bottom-26.25">
-        <p mb-1 text-base font-bold>
+        <p mb-1 text-base text-white font-bold>
           懷孕的第一天
         </p>
-        <p text-xs font-bold>
+        <p text-xs text-white font-bold>
           恭喜你踏上這段美妙的旅程！在這第一週，記得保持充足的休息和營養，保持積極的心態。這是為寶寶和自己打下健康基礎的時候，照顧好自己，也為未來的日子儲備能量
         </p>
       </div>

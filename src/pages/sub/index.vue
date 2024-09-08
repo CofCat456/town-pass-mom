@@ -18,11 +18,11 @@ const navs: {
   text: string
 }[] = [
   {
-    id: 'mood',
+    id: 'diet',
     text: '孕期飲食',
   },
   {
-    id: 'diet',
+    id: 'mood',
     text: '心情溫度計',
   },
 ]
@@ -51,10 +51,10 @@ const tab = ref<Tab>(pageType || 'mood')
     </ul>
 
     <Transition name="fade" mode="out-in">
-      <template v-if="tab === 'mood'">
+      <template v-if="tab === 'diet'">
         <Sub1 />
       </template>
-      <template v-else-if="tab === 'diet'">
+      <template v-else-if="tab === 'mood'">
         <Sub2 />
       </template>
     </Transition>

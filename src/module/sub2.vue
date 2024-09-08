@@ -131,7 +131,7 @@ watch(selectDate, () => {
     </p>
 
     <div m="t-8.75 xa" w-fit rounded-1.25 p="y-1.6 x-16" class="bg-[#F3B671]" op-60>
-      <p text="base center op-80" color-base>
+      <p text="base center op-30" color-base>
         開始建立今天的心情
       </p>
     </div>
