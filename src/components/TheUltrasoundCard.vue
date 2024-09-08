@@ -42,7 +42,7 @@ function go() {
     </div>
 
     <div w-full flex="~ items-center" gap-x-4.5>
-      <div class="w-[40%]" flex="~ col justify-center gap-[1px]">
+      <div class="w-[45%]" flex="~ col justify-center gap-[1px]">
         <p text-2.5 color-annotation>
           姓名
         </p>
@@ -51,7 +51,7 @@ function go() {
         </p>
       </div>
 
-      <div flex-1 flex="~ col justify-center gap-[1px]" class="w-[20%]">
+      <div flex="~ col justify-center gap-[1px]" class="w-[25%]">
         <p text-2.5 color-annotation>
           年齡
         </p>
@@ -60,7 +60,7 @@ function go() {
         </p>
       </div>
 
-      <div flex-1 flex="~ col justify-center gap-[1px]" class="w-[20%]">
+      <div flex="~ col justify-center gap-[1px]" class="w-[30%]">
         <p text-2.5 color-annotation>
           妊娠週數
         </p>
@@ -70,7 +70,7 @@ function go() {
       </div>
     </div>
 
-    <hr class="my-2 h-[1px] bg-[#E5E7EB]">
+    <hr class="my-2 h-[1px] bg-[#DEDEDE] bg-op-70">
 
     <template v-if="check">
       <div w-full flex="~ items-center" gap-x-4.5>
@@ -85,7 +85,7 @@ function go() {
           </p>
         </div>
 
-        <div flex="~ col justify-center gap-[1px] w-60%">
+        <div flex="~ col justify-center gap-[1px]" class="w-60%">
           <p text-2.5 color-annotation>
             最後一次月經
           </p>
@@ -98,7 +98,7 @@ function go() {
     <template v-else>
       <RouterLink v-slot="{ navigate }" :to="`/diary/ultrasound/${id}`" custom>
         <div border="1 [#FFDCB5]" p="y-1 x-3.75" m="xa" w-fit rounded-1.25 @click="navigate">
-          <p color-primary text="base center">
+          <p color-primary text="base center xs">
             點我新增超音波資料
           </p>
         </div>

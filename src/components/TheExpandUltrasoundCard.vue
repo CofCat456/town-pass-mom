@@ -30,7 +30,7 @@ onMounted(() => {
     </div>
 
     <div flex="~ items-center" mb-4 w-full gap-x-4.5>
-      <div class="w-[40%]" flex="~ col justify-center gap-[1px]">
+      <div class="w-[45%]" flex="~ col justify-center gap-[1px]">
         <p text-2.5 color-annotation>
           姓名
         </p>
@@ -39,7 +39,7 @@ onMounted(() => {
         </p>
       </div>
 
-      <div flex-1 flex="~ col justify-center gap-[1px]" class="w-[20%]">
+      <div flex="~ col justify-center gap-[1px]" class="w-[25%]">
         <p text-2.5 color-annotation>
           年齡
         </p>
@@ -48,7 +48,7 @@ onMounted(() => {
         </p>
       </div>
 
-      <div flex-1 flex="~ col justify-center gap-[1px]" class="w-[20%]">
+      <div flex="~ col justify-center gap-[1px]" class="w-[30%]">
         <p text-2.5 color-annotation>
           妊娠週數
         </p>
@@ -60,7 +60,7 @@ onMounted(() => {
 
     <div w-full flex="~ items-center" gap-x-4.5>
       <div
-        flex="~ col justify-center gap-[1px]" class="w-60%"
+        flex="~ col justify-center gap-[1px]" class="w-40%"
       >
         <p text-2.5 color-annotation>
           預產期
@@ -70,7 +70,7 @@ onMounted(() => {
         </p>
       </div>
 
-      <div flex="~ col justify-center gap-[1px] w-40%">
+      <div flex="~ col justify-center gap-[1px]" class="w-60%">
         <p text-2.5 color-annotation>
           最後一次月經
         </p>

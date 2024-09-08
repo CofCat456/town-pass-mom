@@ -8,11 +8,15 @@ const { fetchPrenatal } = prenatalStore
 const ultrasoundStore = useUltrasoundStore()
 const { fetchUltrasound } = ultrasoundStore
 
+const foodStore = useFoodStore()
+const { fetchFood } = foodStore
+
 onBeforeMount(() => {
   Promise.allSettled([
     fetchUser(),
     fetchPrenatal(),
     fetchUltrasound(),
+    fetchFood(),
   ])
 })
 </script>

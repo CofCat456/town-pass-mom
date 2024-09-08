@@ -10,7 +10,7 @@ export const usePrenatalStore = defineStore('prenatal', () => {
 
   async function fetchPrenatal() {
     const res = await ky.get<Prenatal[]>(`prenatal_checkup/user/${VITE_APP_USER_ID}`).json()
-    prenatalDataList.value = res.sort((a, b) => new Date(Number(b.examination_start_date)).getTime() - new Date(Number(a.examination_start_date)).getTime())
+    prenatalDataList.value = res.sort((a, b) => new Date(Number(a.examination_start_date)).getTime() - new Date(Number(b.examination_start_date)).getTime())
   }
 
   async function updatePrenatal(data: Prenatal) {

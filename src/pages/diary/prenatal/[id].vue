@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import dayjs from 'dayjs'
 import type { Dayjs } from 'dayjs'
 import { storeToRefs } from 'pinia'
 import { error, success } from '~/lib/alart'
@@ -20,6 +21,7 @@ const times = computed(() => prenatalDataList.value.findIndex(item => item.id ==
 const prenatal = computed(() => times.value === -1 ? null : prenatalDataList.value[times.value])
 
 const editData = ref<Prenatal | null>(null)
+
 const open = ref<boolean>(false)
 const confirmLoading = ref<boolean>(false)
 
@@ -62,14 +64,14 @@ async function handleOk() {
     confirmLoading.value = false
   }
 }
+
+const title = useTitle()
+onMounted(() => {
+  title.value = `第${convertToChineseNumber(times.value + 1)}次產檢`
+})
 </script>
 
 <template>
-  <!-- Header -->
-  <NavBar>
-    第{{ convertToChineseNumber(times + 1) }}次產檢
-  </NavBar>
-
   <!-- Card -->
   <template v-if="prenatal">
     <div mt-5 px-8>
@@ -97,7 +99,7 @@ async function handleOk() {
     @ok="handleOk"
   >
     <div v-if="editData != null" p="y-5">
-      <div flex="~ col justify-center" gap-y-6>
+      <div flex="~ col justify-center" class="scrollbar-hide" h-120 gap-y-6 of-y-auto>
         <!-- 院所 -->
         <a-space direction="horizontal">
           <p w-24 text-right text-sm font-roboto>
@@ -124,6 +126,7 @@ async function handleOk() {
             :show-time="{ format: 'HH:mm' }"
             format="YYYY年MM月DD HH:mm"
             :placeholder="['看診時間', '結束時間']"
+            :default-value="[dayjs(Number(editData.examination_start_date)), dayjs(Number(editData.examination_end_date))]"
             @ok="onRangeOk"
           />
         </a-space>
@@ -217,7 +220,7 @@ async function handleOk() {
           <p w-24 text-right text-nowrap text-sm font-roboto>
             下次產檢日期 :
           </p>
-          <a-date-picker @change="onDateOk" />
+          <a-date-picker :value="dayjs(Number(editData.next_checkup_date))" @change="onDateOk" />
         </a-space>
       </div>
     </div>

@@ -2,7 +2,7 @@
 import IconHome from './icons/IconHome.vue'
 import IconDiary from './icons/IconDiary.vue'
 import IconData from './icons/IconData.vue'
-import IconQuote from './icons/IconQuote.vue'
+import IconSetting from './icons/IconSetting.vue'
 
 const route = useRoute()
 
@@ -11,25 +11,25 @@ const navs = [
     name: '首頁',
     path: '/',
     icon: IconHome,
-    activeList: ['/', '/setting'],
+    activeList: ['/'],
   },
   {
     name: '育兒日誌',
     path: '/diary',
     icon: IconDiary,
-    activeList: ['/diary/', '/diary/all', '/diary/prenatal/[id]', '/diary/ultrasound/[id]'],
+    activeList: ['/diary/', '/diary/all', '/diary/prenatal/[id]', '/diary/ultrasound/[id]', '/sub/'],
   },
   {
-    name: '育兒資料通',
+    name: '育兒萬事通',
     path: '/data',
     icon: IconData,
     activeList: ['/data'],
   },
   {
-    name: '心情語錄',
-    path: '/quote',
-    icon: IconQuote,
-    activeList: ['/quote'],
+    name: '設定',
+    path: '/setting',
+    icon: IconSetting,
+    activeList: ['/setting'],
   },
 ]
 </script>
@@ -47,9 +47,9 @@ const navs = [
   >
     <template v-for="nav in navs" :key="nav.path">
       <RouterLink v-slot="{ navigate }" custom :to="nav.path">
-        <div flex-1 flex="~ col justify-start items-center" class="group" gap-y-1.5 @click="navigate">
-          <component :is="nav.icon" h-a w-6.25 transition="colors duration-150" class="group-hover:fill-[#F3B671]" :class="nav.activeList?.includes(route.name) ? 'fill-[#F3B671] op-100' : 'op-20'" />
-          <p text-xs transition="colors duration-150" :class="nav.activeList?.includes(route.name) ? 'color-primary' : 'text-[5B6B86] text-op-20'">
+        <div flex-1 flex="~ col justify-start items-center" gap-y-1.5 @click="navigate">
+          <component :is="nav.icon" h-a w-6.25 transition="colors duration-150" :class="nav.activeList?.includes(route.name) ? 'fill-[#F3B671] op-100' : 'op-20'" />
+          <p text-xs transition="colors duration-150" :class="nav.activeList?.includes(route.name) ? 'color-primary' : 'color-base text-op-20'">
             {{ nav.name }}
           </p>
         </div>

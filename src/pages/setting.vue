@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import IconMedal from '~/components/icons/IconMedal.vue'
-import IconParents from '~/components/icons/IconParents.vue'
 import IconNotification from '~/components/icons/IconNotification.vue'
 import IconService from '~/components/icons/IconService.vue'
 
@@ -13,10 +12,6 @@ const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
 
 const menus = [
-  {
-    icon: IconParents,
-    text: '我的父母',
-  },
   {
     icon: IconMedal,
     text: '好孕徽章',
@@ -33,15 +28,8 @@ const menus = [
 </script>
 
 <template>
-  <!-- Back Button -->
-  <div p="x-4 b-6.5 t-7.5">
-    <RouterLink v-slot="{ navigate }" custom to="/">
-      <IconChevronLeft @click="navigate" />
-    </RouterLink>
-  </div>
-
   <!-- 寶寶資訊 -->
-  <section m="a b-5.75" aspect-ratio-square w-32.5 text-center>
+  <section m="a b-5.75" p="x-4 b-6.5 t-7.5" aspect-ratio-square w-32.5 text-center>
     <img src="/bady.png" alt="bady" class="mb-[1.4375rem]">
 
     <div pos-relative mxa mb-2 w-fit>
@@ -52,7 +40,7 @@ const menus = [
     </div>
 
     <p text="sm op-80" color-base>
-      距離出生 20 天
+      距離出生 98 天
     </p>
   </section>
 

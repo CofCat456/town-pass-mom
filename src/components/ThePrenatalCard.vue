@@ -58,11 +58,11 @@ function go() {
       </div>
     </div>
 
-    <hr class="h-[1px] bg-[#E5E7EB]" :class="examination_start_date.length === 0 ? 'mt-2 mb-4' : 'my-2'">
+    <hr class="h-[1px] bg-[#DEDEDE] bg-op-70" :class="examination_start_date.length === 0 ? 'mt-2 mb-4' : 'my-2'">
 
     <template v-if="check">
       <div w-full flex="~ items-center" gap-x-4.5>
-        <div class="w-[40%]" flex="~ col justify-center gap-[1px]">
+        <div class="w-[45%]" flex="~ col justify-center gap-[1px]">
           <p text-2.5 color-annotation>
             檢查院所
           </p>
@@ -71,7 +71,7 @@ function go() {
           </p>
         </div>
 
-        <div flex-1 flex="~ col justify-center gap-[1px]" class="w-[20%]">
+        <div flex="~ col justify-center gap-[1px]" class="w-[25%]">
           <p text-2.5 color-annotation>
             檢查醫師
           </p>
@@ -80,7 +80,7 @@ function go() {
           </p>
         </div>
 
-        <div flex-1 flex="~ col justify-center gap-[1px]" class="w-[20%]">
+        <div flex="~ col justify-center gap-[1px]" class="w-[30%]">
           <p text-2.5 color-annotation>
             檢查日期
           </p>

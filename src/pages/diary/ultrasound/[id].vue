@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import dayjs from 'dayjs'
 import type { Dayjs } from 'dayjs'
 import { storeToRefs } from 'pinia'
 import { error, success } from '~/lib/alart'
@@ -39,7 +40,6 @@ function onExpectedDeliveryDateOk(value: string | Dayjs) {
 }
 
 function onLastMenstruationDateOk(value: string | Dayjs) {
-  // console.log('check', editData.value)
   if (editData.value) {
     editData.value.last_menstruation_date = String((value as Dayjs).toDate().getTime())
   }
@@ -64,14 +64,14 @@ async function handleOk() {
     confirmLoading.value = false
   }
 }
+
+const title = useTitle()
+onMounted(() => {
+  title.value = `第${convertToChineseNumber(times.value + 1)}次產檢超音波檢查記錄`
+})
 </script>
 
 <template>
-  <!-- Header -->
-  <NavBar>
-    第{{ convertToChineseNumber(times + 1) }}次產檢超音波檢查記錄
-  </NavBar>
-
   <!-- Card -->
   <template v-if="prenatal">
     <div mt-5 px-8>
@@ -102,7 +102,7 @@ async function handleOk() {
     @ok="handleOk"
   >
     <div v-if="editData != null" p="y-5">
-      <div flex="~ col justify-center" gap-y-6>
+      <div flex="~ col justify-center" h-120 gap-y-6 of-y-auto>
         <!-- 年齡 -->
         <a-space direction="horizontal">
           <p w-24 text-right text-sm font-roboto>
@@ -124,7 +124,7 @@ async function handleOk() {
           <p w-24 text-right text-nowrap text-sm font-roboto>
             預產期 :
           </p>
-          <a-date-picker @change="onExpectedDeliveryDateOk" />
+          <a-date-picker :value="dayjs(Number(editData.expected_delivery_date))" @change="onExpectedDeliveryDateOk" />
         </a-space>
 
         <!-- 最後一次月經  -->
@@ -132,7 +132,7 @@ async function handleOk() {
           <p w-24 text-right text-nowrap text-sm font-roboto>
             最後一次月經 :
           </p>
-          <a-date-picker @change="onLastMenstruationDateOk" />
+          <a-date-picker dayjs(Number(editData.value.last_menstruation_date)) @change="onLastMenstruationDateOk" />
         </a-space>
 
         <!-- 醫師  -->

@@ -32,7 +32,7 @@ function convertToTimeRange(startDate: number, endDate: number) {
 <template>
   <TheHeader />
 
-  <section p="x-4">
+  <section p="x-4 b-36">
     <!-- 日曆 -->
     <TheCalendar />
 
@@ -45,17 +45,17 @@ function convertToTimeRange(startDate: number, endDate: number) {
           距離下次產檢還有 {{ nextExaminationDate }} 天
         </p>
 
-        <div flex="~ items-center justify-between" gap-0.75>
-          <RouterLink to="/diary/all" class="w-22.75 text-left text-2.5 color-base text-op-50">
+        <div flex="~ items-center justify-between" gap-2>
+          <RouterLink to="/diary/all" class="text-left text-xs color-base text-op-50">
             查看所有產檢紀錄
           </RouterLink>
-          <IconChevronRight h-2.25 w-2.25 />
+          <IconChevronRight />
         </div>
       </div>
 
       <div flex="~ items-center" class="scrollbar-hide" gap-5.25 of="x-auto y-hidden">
         <template v-for="prenatal, index in prenatalDataList" :key="prenatal.id">
-          <div border="1 [#DEDEDE]" p="t-3 b-7.75" w-67.5 flex-shrink-0 cursor-pointer rounded-3xl>
+          <div border="1 [#DEDEDE]" p="t-6 b-7.75" w-67.5 flex-shrink-0 cursor-pointer rounded-3xl>
             <div pb-7.25 border="b [#DEDEDE] op-70">
               <div px-8.75 flex="~ justify-between items-center" text-2.5>
                 <p text-base color-primary font-bold class="leading-[1.125]">
@@ -63,7 +63,7 @@ function convertToTimeRange(startDate: number, endDate: number) {
                 </p>
 
                 <RouterLink v-slot="{ navigate }" custom :to="`/diary/prenatal/${prenatal.id}`">
-                  <p color-base text-op-80 @click="navigate">
+                  <p color-base text="op-80 xs" @click="navigate">
                     產檢紀錄資料
                   </p>
                 </RouterLink>

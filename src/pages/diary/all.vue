@@ -4,10 +4,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 
-import type { Component } from 'vue'
-import IconPregnancy from '~/components/icons/IconPregnancy.vue'
-import Icon24 from '~/components/icons/Icon24.vue'
-import IconChanqianJiancha from '~/components/icons/IconChanqianJiancha.vue'
 import { manuals } from '~/data/manual'
 
 type Tab = 'pregnancy' | 'ultrasound' | 'education'
@@ -24,35 +20,31 @@ const { ultransoundDataList } = storeToRefs(ultrasoundStore)
 
 const navs: {
   id: Tab
-  icon: Component
   text: string
 }[] = [
   {
     id: 'pregnancy',
-    icon: IconPregnancy,
     text: '產前紀錄',
   },
   {
     id: 'ultrasound',
-    icon: Icon24,
     text: '超音波記錄',
   },
   {
     id: 'education',
-    icon: IconChanqianJiancha,
     text: '孕婦衛教手冊',
   },
 ]
 const tab = ref<Tab>('pregnancy')
+
+const title = useTitle()
+onMounted(() => {
+  title.value = '產檢日誌'
+})
 </script>
 
 <template>
-  <!-- Header -->
-  <NavBar path="/diary">
-    產檢資料
-  </NavBar>
-
-  <ul flex="~ items-center" border="b [#000000] op-6" gap-3 px-4>
+  <ul flex="~ justify-center items-center" gap-8 border="b [#000000] op-6" p="x-4 t-6">
     <li
       v-for="nav in navs"
       :key="nav.id"
@@ -62,11 +54,7 @@ const tab = ref<Tab>('pregnancy')
       :class="tab === nav.id ? 'border-[#F3B671]' : 'border-transparent'"
       @click="tab = nav.id"
     >
-      <component
-        :is="nav.icon"
-        :class="tab === nav.id ? 'fill-[#F3B671]' : ''"
-      />
-      <p text="op-85" :class="tab === nav.id ? 'color-primary' : 'text-black'">
+      <p font-roboto text="op-85 sm" :class="tab === nav.id ? 'color-primary' : 'color-base op-20'">
         {{ nav.text }}
       </p>
     </li>
@@ -113,7 +101,7 @@ const tab = ref<Tab>('pregnancy')
             <div border="1 [#FFDCB5]" p="y-1.625" rounded-1.25>
               <a :href="manual">
                 <p color-primary text="base center">
-                  第{{ convertToChineseNumber(index) }}次產檢衛教
+                  第{{ convertToChineseNumber(index + 1) }}次產檢衛教
                 </p>
               </a>
             </div>

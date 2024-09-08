@@ -48,7 +48,7 @@ onMounted(() => {
     </div>
 
     <div mt-4 w-full flex="~ items-center" gap-x-4.5>
-      <div class="w-[40%]" flex="~ col justify-center gap-[1px]">
+      <div class="w-[45%]" flex="~ col justify-center gap-[1px]">
         <p text-2.5 color-annotation>
           檢查院所
         </p>
@@ -57,7 +57,7 @@ onMounted(() => {
         </p>
       </div>
 
-      <div flex-1 flex="~ col justify-center gap-[1px]" class="w-[20%]">
+      <div flex="~ col justify-center gap-[1px]" class="w-[25%]">
         <p text-2.5 color-annotation>
           檢查醫師
         </p>
@@ -66,12 +66,12 @@ onMounted(() => {
         </p>
       </div>
 
-      <div flex-1 flex="~ col justify-center gap-[1px]" class="w-[20%]">
+      <div flex="~ col justify-center gap-[1px]" class="w-[30%]">
         <p text-2.5 color-annotation>
           檢查日期
         </p>
         <p text-2.5 color-base font-medium>
-          {{ examination_start_date ? convertToYYYYMMDD(Number(examination_start_date) * 1000, false) : '----------' }}
+          {{ examination_start_date ? convertToYYYYMMDD(Number(examination_start_date), false) : '----------' }}
         </p>
       </div>
     </div>
